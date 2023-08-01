@@ -12,28 +12,39 @@
         <hr>
         <br>
         <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'Music')" id="defaultOpen">Music</button>
+            <button class="tablinks" onclick="openTab(event, 'Arrangements')" id="defaultOpen">Arrangements</button>
+            <button class="tablinks" onclick="openTab(event, 'Original Compositions')">Original Compositions</button>
             <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
         </div>
-        <div id="Music" class="tabcontent">
+        <div id="Arrangements" class="tabcontent">
             <div id="search-container">
                 <br>
-                <input type="text" id="search-input" placeholder="Search our music...">
+                <input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search our music...">
+                <button id="search-button" onclick="performSearch()">Search</button>
+            </div>
+            <div class="fortext">
+                <p>Arrangements currently available...</p>
+            </div>
+            <ul id="musicList" style="list-style: none;">
+                <br><li><a href="notavailable.html"><b>Daphnis et Chloe</b></a></li>
+                <br><li><a href="notavailable.html"><b>La Mer</b></a></li>
+                <br><li><a href="ThePlanets.html"><b>Nocturnes</b></a></li>
+                <br><li><a href="notavailable.html"><b>The Planets</b></a></li>
+            </ul>
+        </div>
+        <div id="Original Compositions" class="tabcontent">
+            <div id="search-container">
+                <br>
+                <input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search our music...">
                 <button id="search-button" onclick="performSearch()">Search</button>
             </div>
             <div class="fortext">
                 <p>Scores currently available...</p>
             </div>
-            <a href="ThePlanets.html">
-            <div class="musicList">
-                <p><b>The Planets</b></p>
-            </div>
-            </a>
-            <a href="notavailable.html">
-            <div class="musicList">
-                <p><b>Trois Nocturnes</b></p>
-            </div>
-            </a>
+            <ul id="musicList" style="list-style: none;">
+                <br><li><a href="notavailable.html"><b>Fantasia for Piano</b> (by Edward Tait)</a></li>
+                <br><li><a href="notavailable.html"><b>Mo Li Hua</b> (by Edward Tait)</a></li>
+            </ul>
         </div>
         <div id="Contact" class="tabcontent">
             <center><h3>Contact</h3>
@@ -81,6 +92,7 @@
           overflow: hidden;
           border: 1px solid #ccc;
           background-color: #50d6c9;
+          width: 600px;
         }
     
         /* Style the buttons inside the tab */
@@ -93,6 +105,7 @@
           padding: 14px 16px;
           transition: 0.3s;
           font-family: verdana;
+          width: 200px;
         }
     
         /* Change background color of buttons on hover */
@@ -124,9 +137,10 @@
         }
 
         #search-input {
-            width: 300px;
+            width: 50%;
             padding: 5px;
             margin-right: 5px;
+            height: 30px;
         }
 
         #search-button {
@@ -171,6 +185,26 @@
           // Show the current tab, and add an "active" class to the button that opened the tab
           document.getElementById(tabName).classList.add("show");
           evt.currentTarget.classList.add("active");
+        }
+
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("musicList");
+            li = ul.getElementsByTagName('li');
+            
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+                } else {
+                li[i].style.display = "none";
+                }
+            }
         }
     </script>
 </html>
