@@ -6,81 +6,41 @@
     </head>
     <body><center>
         <p style="font-size: 40px; background-color: orangered;">Welcome to <b>NoteWelder</b></p>
-        <p style="font-size: 20px; color: rgb(0, 0, 58);">We sell arrangements of large orchestral works for the accessibility and convenience of the solo piano.</p>
-        <p style="font-size: 20px; color: rgb(0, 0, 58);">At the moment, we only have one arrangement avaliable for sale – "<b>The Planets</b>" by <i>Gustav Holst</i>. But we have more coming over the next few months!</p>
+        <p style="font-size: 20px; color: rgb(0, 0, 58);">We sell arrangements of large orchestral works for the accessibility and convenience of the <b>solo piano</b>.</p>
+        <p style="font-size: 20px; color: rgb(0, 0, 58);">At the moment, we only have one arrangement avaliable for sale – "<b>The Planets</b>" by <i>Gustav Holst</i>. But we have more music in preparation over the next few months, such as "<b>Nocturnes</b>" by <i>Claude Debussy</i>.</p>
         <br>
         <hr>
         <br>
-        <div class="row">
-            <div class="column">
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">Here's a <b>sheet music preview</b> of the first movement – "<b><i>Mars, the Bringer of the War</i></b>"</p>
-                <embed src="The Planets (Holst) Mars - Full Score 4 (extract).pdf"
-                    width="85%"
-                    height="315"
-                />
-            </div>
-            <div class="column">
-                <iframe width="90%" height="315" src="https://www.youtube.com/embed/Q-kyf10lxHY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">And here's a <b>preview recording</b> of the sixth movement – "<b><i>Saturn, the Bringer of Old Age</i></b>"</p>
-            </div>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Music')" id="defaultOpen">Music</button>
+            <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
         </div>
-        <br>
-        <hr>
-        <p style="font-size: 20px; color: rgb(0, 0, 58);">If this product interests you, you can purchase either the <b>full score</b> or the <b>individual movements...</b></p>
-        <br>
-        <div class="row2">
-            <div class="column2">
-                <a href="https://www.sheetmusicplus.com/title/the-planets-digital-sheet-music/22540460"><img src="Mars front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);"><b>Full Score</b></p>
+        <div id="Music" class="tabcontent">
+            <div id="search-container">
                 <br>
-                <a href="https://www.musicnotes.com/marketplace/sheetmusic/MK0040837"><img src="Jupiter front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">4) <b>Jupiter</b>, the Bringer of Jollity</p>
+                <input type="text" id="search-input" placeholder="Search our music...">
+                <button id="search-button" onclick="performSearch()">Search</button>
             </div>
-            <div class="column2">
-                <a href="https://www.musicnotes.com/marketplace/sheetmusic/MK0040833"><img src="Mars front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">1) <b>Mars</b>, the Bringer of War</p>
-                <br>
-                <a href="https://www.musicnotes.com/marketplace/sheetmusic/MK0040838"><img src="Saturn front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">5) <b>Saturn</b>, the Bringer of Old Age</p>
+            <div class="fortext">
+                <p>Scores currently available...</p>
             </div>
-            <div class="column2">
-                <a href="https://www.musicnotes.com/marketplace/sheetmusic/MK0040835"><img src="Venus front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">2) <b>Venus</b>, the Bringer of Peace</p>
-                <br>
-                <a href="https://www.musicnotes.com/marketplace/sheetmusic/MK0040839"><img src="Uranus front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">6) <b>Uranus</b>, the Magician</p>
+            <a href="ThePlanets.html">
+            <div class="musicList">
+                <p><b>The Planets</b></p>
             </div>
-            <div class="column2">
-                <a href="https://www.musicnotes.com/marketplace/sheetmusic/MK0040836"><img src="Mercury front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">3) <b>Mercury</b>, the Winged Messenger</p>
-                <br>
-                <a href="https://www.musicnotes.com/marketplace/sheetmusic/MK0040840"><img src="Neptune front page.png"
-                    width="80%"
-                    height="1.3125*width" />
-                </a>
-                <p style="font-size: 20px; color: rgb(0, 0, 58);">7) <b>Neptune</b>, the Mystic</p>
+            </a>
+            <a href="notavailable.html">
+            <div class="musicList">
+                <p><b>Trois Nocturnes</b></p>
             </div>
+            </a>
+        </div>
+        <div id="Contact" class="tabcontent">
+            <center><h3>Contact</h3>
+            <p>For any enquires, contact us through...</p>
+            <p>...our <b>email address</b> <b>–</b> either <b><a href="mailto:edwardtait06@outlook.com">edwardtait06@outlook.com</a></b> or <b><a href="mailto:starkermusic42@gmail.com">starkermusic42@gmail.com</a></b></p>
+            <p>...or through our <b>phone number</b> <b>–</b> <b><a href="tel:07523996306">07523 996306</a></b></p>
+            </center></div>
         </div>
     </center></body>
     <style>
@@ -113,6 +73,104 @@
         body {
             margin: 2%;
             background-color: #50d6c9;
+            font-family: verdana;
+        }
+
+        /* Style the tab buttons */
+        .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #50d6c9;
+        }
+    
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: #50d6c9;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-family: verdana;
+        }
+    
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #50b2d6;
+        }
+    
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+    
+        /* Style the tab content */
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+    
+        /* Show the tab content when clicked */
+        .tabcontent.show {
+          display: block;
+        }
+
+        #search-container {
+            margin-top: 10px;
+            font-family: verdana;
+        }
+
+        #search-input {
+            width: 300px;
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        #search-button {
+            padding: 5px 10px;
+            cursor: pointer;
+            font-family: verdana;
+        }
+
+        .fortext {
+          color: #4d4d4d;
+        }
+
+        .musicList {
+            border: 1px solid #50d6c9;
+            background-color: rgb(237, 130, 91);
+            padding: 10px;
+            margin-top: 10px;
+            width: 50%;
+            height: flex;
         }
     </style>
+    <script>
+        // Open the default tab on page load
+        document.getElementById("defaultOpen").click();
+
+        function openTab(evt, tabName) {
+          // Declare all variables
+          var i, tabcontent, tablinks;
+    
+          // Get all elements with class="tabcontent" and hide them
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("show");
+          }
+    
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+          }
+    
+          // Show the current tab, and add an "active" class to the button that opened the tab
+          document.getElementById(tabName).classList.add("show");
+          evt.currentTarget.classList.add("active");
+        }
+    </script>
 </html>
